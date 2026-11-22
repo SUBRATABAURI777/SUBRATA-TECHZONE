@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUBRATA TECHZONE</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #080e1c;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  background: #101a2e;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+.hero {
+  text-align: center;
+  padding: 110px 20px;
+  background: linear-gradient(135deg, #101a38, #082e49);
+}
+
+.hero h1 {
+  font-size: clamp(35px, 6vw, 65px);
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #38bdf8;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #0284c7;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background: #0369a1;
+}
+
+section {
+  padding: 65px 8%;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #111e33;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #263d5b;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: #38bdf8;
+}
+
+.card h3 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 28px;
+  background: #101a2e;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SUBRATA TECHZONE</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#technology">Technology</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <h1>EXPLORE THE <span>FUTURE</span></h1>
+  <p>Your Ultimate Destination for Technology, AI, Gaming & Gadgets.</p>
+  <a href="#technology" class="btn">Explore Now →</a>
+</div>
+
+<section id="technology">
+  <h2>Explore Our World</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>💻 Technology</h3>
+      <p>Discover the latest technology news, innovations and updates.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 Artificial Intelligence</h3>
+      <p>Explore AI tools, discoveries and the future of intelligence.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎮 Gaming Zone</h3>
+      <p>Discover gaming news, new releases and gaming technology.</p>
+    </div>
+
+    <div class="card">
+      <h3>📱 Gadgets</h3>
+      <p>Explore smartphones, laptops and exciting new gadgets.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p style="text-align:center;color:#cbd5e1;line-height:1.8">
+    SUBRATA TECHZONE is your destination to explore
+    the exciting world of modern technology.
+  </p>
+</section>
+
+<footer>
+  © 2026 SUBRATA TECHZONE. All Rights Reserved.
+</footer>
+
+<script>
+function searchTech() {
+  const input = document.getElementById("techSearch");
+  const query = input.value.toLowerCase().trim();
+
+  const cards = document.querySelectorAll(".card");
+  let found = false;
+
+  cards.forEach(card => {
+    const match = card.innerText.toLowerCase().includes(query);
+
+    card.style.display = match ? "block" : "none";
+
+    if (match) found = true;
+  });
+
+  if (!found && query !== "") {
+    alert("No matching technology found!");
+  }
+}
+</script>
+
+</body>
+</html>
